@@ -1,12 +1,12 @@
-# next-template
+# Tweets
 
-A Next.js 13 template for building apps with Radix UI and Tailwind CSS.
+Display a list of tweets or feeds that fetched from Apify - Shane-tweets.
 
 ## Usage
 
-```bash
-npx create-next-app -e https://github.com/shadcn/next-template
-```
+1. Install dependencies: ```pnpm install```
+2. Set APIFY_TOKEN to the one in apify
+3. Run development server
 
 ## Features
 
