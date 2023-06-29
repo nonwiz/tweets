@@ -64,8 +64,10 @@ function Tweet({ data }: { data: Tweet }) {
 }
 
 export default function Tweets({ data }: { data: Tweet[] }) {
-  return <section className="grid place-content-center gap-2 bg-transparent">
-    {data.map((tweet, tweetId) => <div key={tweetId}><Tweet data={tweet} /></div>)}
-  </section>
+  return <>
+    <section className="grid place-content-center gap-2 bg-transparent">
+      {data.map((tweet, tweetId) => <div key={tweetId}><Tweet data={tweet} /></div>)}
+    </section>
+  </>
 
 }
