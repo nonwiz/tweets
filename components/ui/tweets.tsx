@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 import { Heart, Link, MessageCircle, Repeat } from "lucide-react";
 
 export interface Tweet {
@@ -15,7 +16,11 @@ export interface Tweet {
   replies: number
 }
 
-function Tweet({ data }: { data: Tweet }) {
+interface Style {
+  isLarge: boolean
+}
+
+function Tweet({ data, style }: { data: Tweet, style?: Style }) {
   return <div>
     <div className="space-y-1">
       <div className="flex flex-col xs:flex-row gap-4">
@@ -24,14 +29,14 @@ function Tweet({ data }: { data: Tweet }) {
           <AvatarFallback>{data.fullname[0]}</AvatarFallback>
         </Avatar>
         <div className="">
-          <h4 className="text-sm font-medium leading-none">
+          <h4 className={`${style?.isLarge ? "text-md" : "text-sm"} font-medium leading-none`}>
             <span>{data.fullname}, </span>
-            <span className="text-sm text-muted-foreground"> {new Date(data.timestamp).toDateString()}</span>
+            <span className={`${style?.isLarge ? "text-md" : "text-sm"} text-muted-foreground`}> {new Date(data.timestamp).toDateString()}</span>
           </h4>
-          <p className="text-sm text-muted-foreground mt-2 max-w-prose leading-relaxed">
+          <p className={`${style?.isLarge ? "text-md" : "text-sm"} text-muted-foreground mt-2 max-w-prose leading-relaxed`}>
             {data.text}
           </p>
-          <div className="flex h-5 items-center mt-4 mb-2 space-x-4 text-sm">
+          <div className="flex h-5 items-center mt-4 mb-2 space-x-4 text-md">
             <div className="flex flex-row justify-center gap-2 align-middle">
               <MessageCircle className="text-sm text-muted-foreground" />
               <span className="text-sm">{data.replies}</span>
@@ -63,10 +68,10 @@ function Tweet({ data }: { data: Tweet }) {
   </div>
 }
 
-export default function Tweets({ data }: { data: Tweet[] }) {
+export default function Tweets({ data, style }: { data: Tweet[], style: object }) {
   return <>
     <section className="grid place-content-center gap-2 bg-transparent">
-      {data.map((tweet, tweetId) => <div key={tweetId}><Tweet data={tweet} /></div>)}
+      {data.map((tweet, tweetId) => <div key={tweetId}><Tweet data={tweet} style={style} /></div>)}
     </section>
   </>
 
