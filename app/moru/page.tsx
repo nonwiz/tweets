@@ -6,7 +6,7 @@ export default async function MoruPage() {
   const data = await getFeeds();
   return (
     <>
-      <Tweets data={data} />
+      <Tweets data={data} style={{isLarge: false}} />
     </>
   )
 }

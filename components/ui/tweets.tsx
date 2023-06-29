@@ -16,7 +16,7 @@ export interface Tweet {
   replies: number
 }
 
-interface Style {
+export interface Style {
   isLarge: boolean
 }
 
@@ -68,7 +68,7 @@ function Tweet({ data, style }: { data: Tweet, style?: Style }) {
   </div>
 }
 
-export default function Tweets({ data, style }: { data: Tweet[], style: object }) {
+export default function Tweets({ data, style }: { data: Tweet[], style: Style }) {
   return <>
     <section className="grid place-content-center gap-2 bg-transparent">
       {data.map((tweet, tweetId) => <div key={tweetId}><Tweet data={tweet} style={style} /></div>)}
