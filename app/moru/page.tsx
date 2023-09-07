@@ -1,5 +1,5 @@
 import Tweets from "@/components/ui/tweets";
-import { getActorFeeds, getFeeds } from "@/lib/server";
+import { getActorFeeds } from "@/lib/server";
 
 
 export default async function MoruPage() {
