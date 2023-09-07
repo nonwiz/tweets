@@ -18,7 +18,8 @@ export interface Tweet {
 }
 
 export interface Style {
-  isLarge: boolean
+  isLarge?: boolean,
+  isBold?: boolean
 }
 
 const TWEET_PARSE_TYPE = {
@@ -53,7 +54,7 @@ function Tweet({ data, style }: { data: Tweet, style?: Style }) {
             <span>{data.fullname}, </span>
             <span className={`${style?.isLarge ? "text-md" : "text-sm"} text-muted-foreground`}> {new Date(data.timestamp).toDateString()}</span>
           </h4>
-          <p className={`${style?.isLarge ? "text-md" : "text-sm"} text-muted-foreground mt-2 max-w-prose leading-relaxed`}>
+          <p className={`${style?.isLarge ? "text-md md:text-lg" : "text-sm"} ${style?.isBold ? "" : "text-muted-foreground"} mt-2 max-w-prose leading-relaxed`}>
             {result.map((entry, entryId) => (<span key={entryId}>
               <TweetRender entry={entry} />
             </span>))}
