@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@hookform/resolvers':
     specifier: ^3.1.1
@@ -148,6 +152,9 @@ dependencies:
   tailwindcss-animate:
     specifier: ^1.0.6
     version: 1.0.6(tailwindcss@3.3.2)
+  tweet-parser:
+    specifier: ^0.2.0
+    version: 0.2.0
   typescript:
     specifier: 5.1.6
     version: 5.1.6
@@ -4637,6 +4644,10 @@ packages:
     dependencies:
       tslib: 1.14.1
       typescript: 5.1.6
+    dev: false
+
+  /tweet-parser@0.2.0:
+    resolution: {integrity: sha512-GpZIg10lXgEJmDCVNPdKW2vJMfYP958iZbIerXQOME8/u7uzHHjeXVjt4eQdWQ9C9WRH+1BmqGBNw1Cm4SfplA==}
     dev: false
 
   /type-check@0.4.0:
