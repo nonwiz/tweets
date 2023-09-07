@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'MORU Tweets',
-  description: '',
+  title: 'Programming memes tweets',
+  description: 'Memes from twitters using apify.',
 }
 
 export default function RootLayout({
